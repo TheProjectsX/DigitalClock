@@ -3,19 +3,21 @@
     --saturation: 100%;
     --lightness: 50%;
 }
+
 *{
     margin: 0;
     padding: 0;
 }
 
+
 body{
-    background-color: #86c2ff;
-    font-size: 18px;
+    background-color: dodgerblue;
     font-family: 'Ubuntu', sans-serif;
 }
 
+
 header{
-    margin-block: 1.5rem;
+    margin-block: 1.5rem 3rem;
 }
 
 header h1{
@@ -35,101 +37,61 @@ header p{
     color: white;
 }
 
-.container{
+.clock{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 60%; */
-    margin-inline: auto;
+    gap: 10px;
+    color: white;
 }
 
-.title {
-    text-align: center;
-    font-size: 2rem;
-    color: hsl(var(--hua) var(--saturation) var(--lightness));
+.title{
     margin-bottom: 10px;
+    text-align: center;
 }
 
-.optionBoard{
-    margin-block: 1rem;
-    width: calc(395px + 1rem + 395px);
+.time, .date{
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: .8rem;
-    font-size: 1.3rem;
-    color: blue;
+    justify-content: center;
+    gap: 5px;
 }
 
-.option{
-    gap: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-@media (width < 560px){
-    .optionBoard{
-        width: auto;
-    }
-}
-
-.optionBoard select, .optionBoard button{
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px;
-    outline: none;
-    border-radius: 8px;
+.time p, .date p{
     background-color: white;
-    border: 2px solid black;
+    color: hsl(var(--hua) var(--saturation) var(--lightness));
+    padding: 4px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 4px;
+    text-align: center;
+    width: 35px;
+    box-shadow: 0 0 12px 0px #00000059;
 }
 
-.optionBoard select:hover, .optionBoard button:hover, label:hover{
-    cursor: pointer;
+.time .seperator{
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    width: auto;
 }
 
-.optionBoard button{
-    width: 105px;
-    padding: 8px 1rem;
+.time .period{
     margin-left: 5px;
 }
 
-.optionBoard button:active{
-    border-color: dodgerblue;
-    color: dodgerblue;
+.date{
+    gap: 13px;
 }
 
-.decryptBoard{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-inline: 10px;
-}
 
-.decryptBoard textarea{
-    font-size: 1rem;
-    padding: 10px;
-    border-radius: 10px;
-    resize: none;
-    outline: none;
-    border: 3px solid gray;
-}
-
-.decryptBoard textarea:focus{
-    border-color: dodgerblue;
-}
-
-@media (width < 870px){
-    .optionBoard{
-        width: 60%;
-    }
-    .decryptBoard textarea{
-        height: 140px;
-        width: 60%;
-    }
+.date .year{
+    width: calc(35px + 35px);
 }
 
 .copyright{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     font-size: .85rem;
     text-align: center;
     background-color: black;
@@ -137,12 +99,4 @@ header p{
     text-align: center;
     margin-top: 10px;
     padding-block: 8px;
-}
-
-@media (width > 740px){
-    .copyright{
-        position: absolute;
-        bottom: 0px;
-        width: 100%;
-    }
 }
